@@ -9,14 +9,38 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as XoxRouteImport } from './routes/xox'
+import { Route as WhackAMoleRouteImport } from './routes/whack-a-mole'
+import { Route as TreeBrowserRouteImport } from './routes/tree-browser'
 import { Route as TrafficLightsRouteImport } from './routes/traffic-lights'
 import { Route as StopWatchRouteImport } from './routes/stop-watch'
 import { Route as RockPaperScissorsRouteImport } from './routes/rock-paper-scissors'
 import { Route as RandomQoutesRouteImport } from './routes/random-qoutes'
+import { Route as QuizesRouteImport } from './routes/quizes'
+import { Route as PasswordGeneratorRouteImport } from './routes/password-generator'
+import { Route as PageSplitterRouteImport } from './routes/page-splitter'
+import { Route as HangmanRouteImport } from './routes/hangman'
 import { Route as GradientRouteImport } from './routes/gradient'
+import { Route as ExpensesRouteImport } from './routes/expenses'
 import { Route as DiceRouteImport } from './routes/dice'
+import { Route as CalculatorRouteImport } from './routes/calculator'
 import { Route as IndexRouteImport } from './routes/index'
 
+const XoxRoute = XoxRouteImport.update({
+  id: '/xox',
+  path: '/xox',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhackAMoleRoute = WhackAMoleRouteImport.update({
+  id: '/whack-a-mole',
+  path: '/whack-a-mole',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TreeBrowserRoute = TreeBrowserRouteImport.update({
+  id: '/tree-browser',
+  path: '/tree-browser',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TrafficLightsRoute = TrafficLightsRouteImport.update({
   id: '/traffic-lights',
   path: '/traffic-lights',
@@ -37,14 +61,44 @@ const RandomQoutesRoute = RandomQoutesRouteImport.update({
   path: '/random-qoutes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuizesRoute = QuizesRouteImport.update({
+  id: '/quizes',
+  path: '/quizes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PasswordGeneratorRoute = PasswordGeneratorRouteImport.update({
+  id: '/password-generator',
+  path: '/password-generator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PageSplitterRoute = PageSplitterRouteImport.update({
+  id: '/page-splitter',
+  path: '/page-splitter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HangmanRoute = HangmanRouteImport.update({
+  id: '/hangman',
+  path: '/hangman',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GradientRoute = GradientRouteImport.update({
   id: '/gradient',
   path: '/gradient',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExpensesRoute = ExpensesRouteImport.update({
+  id: '/expenses',
+  path: '/expenses',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DiceRoute = DiceRouteImport.update({
   id: '/dice',
   path: '/dice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorRoute = CalculatorRouteImport.update({
+  id: '/calculator',
+  path: '/calculator',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -55,74 +109,158 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/calculator': typeof CalculatorRoute
   '/dice': typeof DiceRoute
+  '/expenses': typeof ExpensesRoute
   '/gradient': typeof GradientRoute
+  '/hangman': typeof HangmanRoute
+  '/page-splitter': typeof PageSplitterRoute
+  '/password-generator': typeof PasswordGeneratorRoute
+  '/quizes': typeof QuizesRoute
   '/random-qoutes': typeof RandomQoutesRoute
   '/rock-paper-scissors': typeof RockPaperScissorsRoute
   '/stop-watch': typeof StopWatchRoute
   '/traffic-lights': typeof TrafficLightsRoute
+  '/tree-browser': typeof TreeBrowserRoute
+  '/whack-a-mole': typeof WhackAMoleRoute
+  '/xox': typeof XoxRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/calculator': typeof CalculatorRoute
   '/dice': typeof DiceRoute
+  '/expenses': typeof ExpensesRoute
   '/gradient': typeof GradientRoute
+  '/hangman': typeof HangmanRoute
+  '/page-splitter': typeof PageSplitterRoute
+  '/password-generator': typeof PasswordGeneratorRoute
+  '/quizes': typeof QuizesRoute
   '/random-qoutes': typeof RandomQoutesRoute
   '/rock-paper-scissors': typeof RockPaperScissorsRoute
   '/stop-watch': typeof StopWatchRoute
   '/traffic-lights': typeof TrafficLightsRoute
+  '/tree-browser': typeof TreeBrowserRoute
+  '/whack-a-mole': typeof WhackAMoleRoute
+  '/xox': typeof XoxRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/calculator': typeof CalculatorRoute
   '/dice': typeof DiceRoute
+  '/expenses': typeof ExpensesRoute
   '/gradient': typeof GradientRoute
+  '/hangman': typeof HangmanRoute
+  '/page-splitter': typeof PageSplitterRoute
+  '/password-generator': typeof PasswordGeneratorRoute
+  '/quizes': typeof QuizesRoute
   '/random-qoutes': typeof RandomQoutesRoute
   '/rock-paper-scissors': typeof RockPaperScissorsRoute
   '/stop-watch': typeof StopWatchRoute
   '/traffic-lights': typeof TrafficLightsRoute
+  '/tree-browser': typeof TreeBrowserRoute
+  '/whack-a-mole': typeof WhackAMoleRoute
+  '/xox': typeof XoxRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/calculator'
     | '/dice'
+    | '/expenses'
     | '/gradient'
+    | '/hangman'
+    | '/page-splitter'
+    | '/password-generator'
+    | '/quizes'
     | '/random-qoutes'
     | '/rock-paper-scissors'
     | '/stop-watch'
     | '/traffic-lights'
+    | '/tree-browser'
+    | '/whack-a-mole'
+    | '/xox'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/calculator'
     | '/dice'
+    | '/expenses'
     | '/gradient'
+    | '/hangman'
+    | '/page-splitter'
+    | '/password-generator'
+    | '/quizes'
     | '/random-qoutes'
     | '/rock-paper-scissors'
     | '/stop-watch'
     | '/traffic-lights'
+    | '/tree-browser'
+    | '/whack-a-mole'
+    | '/xox'
   id:
     | '__root__'
     | '/'
+    | '/calculator'
     | '/dice'
+    | '/expenses'
     | '/gradient'
+    | '/hangman'
+    | '/page-splitter'
+    | '/password-generator'
+    | '/quizes'
     | '/random-qoutes'
     | '/rock-paper-scissors'
     | '/stop-watch'
     | '/traffic-lights'
+    | '/tree-browser'
+    | '/whack-a-mole'
+    | '/xox'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CalculatorRoute: typeof CalculatorRoute
   DiceRoute: typeof DiceRoute
+  ExpensesRoute: typeof ExpensesRoute
   GradientRoute: typeof GradientRoute
+  HangmanRoute: typeof HangmanRoute
+  PageSplitterRoute: typeof PageSplitterRoute
+  PasswordGeneratorRoute: typeof PasswordGeneratorRoute
+  QuizesRoute: typeof QuizesRoute
   RandomQoutesRoute: typeof RandomQoutesRoute
   RockPaperScissorsRoute: typeof RockPaperScissorsRoute
   StopWatchRoute: typeof StopWatchRoute
   TrafficLightsRoute: typeof TrafficLightsRoute
+  TreeBrowserRoute: typeof TreeBrowserRoute
+  WhackAMoleRoute: typeof WhackAMoleRoute
+  XoxRoute: typeof XoxRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/xox': {
+      id: '/xox'
+      path: '/xox'
+      fullPath: '/xox'
+      preLoaderRoute: typeof XoxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/whack-a-mole': {
+      id: '/whack-a-mole'
+      path: '/whack-a-mole'
+      fullPath: '/whack-a-mole'
+      preLoaderRoute: typeof WhackAMoleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tree-browser': {
+      id: '/tree-browser'
+      path: '/tree-browser'
+      fullPath: '/tree-browser'
+      preLoaderRoute: typeof TreeBrowserRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/traffic-lights': {
       id: '/traffic-lights'
       path: '/traffic-lights'
@@ -151,6 +289,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RandomQoutesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/quizes': {
+      id: '/quizes'
+      path: '/quizes'
+      fullPath: '/quizes'
+      preLoaderRoute: typeof QuizesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/password-generator': {
+      id: '/password-generator'
+      path: '/password-generator'
+      fullPath: '/password-generator'
+      preLoaderRoute: typeof PasswordGeneratorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/page-splitter': {
+      id: '/page-splitter'
+      path: '/page-splitter'
+      fullPath: '/page-splitter'
+      preLoaderRoute: typeof PageSplitterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hangman': {
+      id: '/hangman'
+      path: '/hangman'
+      fullPath: '/hangman'
+      preLoaderRoute: typeof HangmanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gradient': {
       id: '/gradient'
       path: '/gradient'
@@ -158,11 +324,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GradientRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/expenses': {
+      id: '/expenses'
+      path: '/expenses'
+      fullPath: '/expenses'
+      preLoaderRoute: typeof ExpensesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dice': {
       id: '/dice'
       path: '/dice'
       fullPath: '/dice'
       preLoaderRoute: typeof DiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculator': {
+      id: '/calculator'
+      path: '/calculator'
+      fullPath: '/calculator'
+      preLoaderRoute: typeof CalculatorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -177,12 +357,21 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CalculatorRoute: CalculatorRoute,
   DiceRoute: DiceRoute,
+  ExpensesRoute: ExpensesRoute,
   GradientRoute: GradientRoute,
+  HangmanRoute: HangmanRoute,
+  PageSplitterRoute: PageSplitterRoute,
+  PasswordGeneratorRoute: PasswordGeneratorRoute,
+  QuizesRoute: QuizesRoute,
   RandomQoutesRoute: RandomQoutesRoute,
   RockPaperScissorsRoute: RockPaperScissorsRoute,
   StopWatchRoute: StopWatchRoute,
   TrafficLightsRoute: TrafficLightsRoute,
+  TreeBrowserRoute: TreeBrowserRoute,
+  WhackAMoleRoute: WhackAMoleRoute,
+  XoxRoute: XoxRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

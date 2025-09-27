@@ -19,7 +19,7 @@ function Dice() {
         <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 m-10" onClick={handleRoll}>
           Roll
         </button>
-        {diceNumber !== undefined && <DiceNumber diceNumber={diceNumber} />}
+        {diceNumber !== undefined && <DiceNumber diceNumber={5} />}
       </div>
     </div>
   );
